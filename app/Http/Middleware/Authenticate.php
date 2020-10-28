@@ -2,7 +2,9 @@
 
 namespace App\Http\Middleware;
 
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use Illuminate\Support\Facades\Request as FacadesRequest;
 
 class Authenticate extends Middleware
 {
@@ -14,7 +16,11 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
-        if (! $request->expectsJson()) {
+        if (!$request->expectsJson()) {
+            if (FacadesRequest::is('admin/*')) {
+
+                return route('admin.login');
+            }
             return route('login');
         }
     }

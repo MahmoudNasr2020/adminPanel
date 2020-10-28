@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\admin\login;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\admin\login\loginRequest;
+use App\models\admin\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class loginController extends Controller
 {
@@ -13,12 +17,15 @@ class loginController extends Controller
         return view('admin.login.login');
     }
 
-    public function login()
+    public function login(loginRequest $request)
     {
-        $admin = new App\models\admin\Admin();
+        $remmber_me = $request->has('remember_me') ? true : false;
 
-        $admin->email = 'mmm@gmail.com';
+        if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $remmber_me)) {
 
-        $admin->password = Hash::make('123456789');
+            return redirect()->route('admin.home');
+        }
+
+        return redirect()->back()->with(['error' => 'هناك خطأ في البيانات']);
     }
 }

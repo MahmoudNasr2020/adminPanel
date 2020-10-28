@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{{ $style }}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light"> Dashboard</span>
+      <span class="brand-text font-weight-light">{{ __('messages.Dashboard') }}</span>
     </a>
 
     <!-- Sidebar -->
@@ -18,7 +18,7 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-chart-line"></i>
               <p>
-                dashboard
+                {{ __('messages.dashboard') }}
               </p>
             </a>
 
@@ -28,7 +28,7 @@
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-store-alt"></i>
               <p>
-                Shops
+                {{ __('messages.Shops') }}
               </p>
             </a>
           </li>
@@ -37,7 +37,7 @@
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-tags"></i>
               <p>
-                Coupons
+                {{ __('messages.Coupons') }}
               </p>
             </a>
           </li>
@@ -46,7 +46,7 @@
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fa fa-tasks"></i>
               <p>
-                Governments Agencies
+                {{ __('messages.Governments Agencies') }}
               </p>
             </a>
           </li>
@@ -54,7 +54,7 @@
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-desktop"></i>
               <p>
-               Settings
+               {{ __('messages.Settings') }}
               </p>
             </a>
           </li>
@@ -63,7 +63,7 @@
                     <a href="pages/widgets.html" class="nav-link">
                     <i class="nav-icon fas fa-sliders-h"></i>
                     <p>
-                    Sliders
+                   {{__('messages.Sliders')}}
                     </p>
                     </a>
             </li>
@@ -72,7 +72,7 @@
                     <a href="#" class="nav-link">
                     <i class="nav-icon fa fa-users"></i>
                     <p>
-                        Deliveries
+                        {{__('messages.Deliveries')}}
                     </p>
                     </a>
             </li>
@@ -80,7 +80,7 @@
                     <a href="#" class="nav-link">
                     <i class="nav-icon fa fa-sitemap"></i>
                     <p>
-                        Categories
+                        {{ __('messages.Categories') }}
                     </p>
                     </a>
                 </li>
@@ -88,7 +88,7 @@
                         <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-sign-out-alt"></i>
                         <p>
-                            Logout
+                            {{ __('messages.Logout') }}
                         </p>
                         </a>
                  </li>

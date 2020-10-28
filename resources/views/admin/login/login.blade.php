@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="{{ $style }}/login/css-rtl/style-rtl.css">
     <!-- END Custom CSS-->
     <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
-    s
+
     <style>
         body {
             font-family: 'Cairo', sans-serif;
@@ -58,7 +58,7 @@
                             <div class="card-header border-0">
                                 <div class="card-title text-center">
                                     <div class="p-1">
-                                        <img src="{{ $style }}/login/images/gallery/user.png" alt="LOGO" style="width: 50%;height: 150px;"/>
+                                        <img src="{{ $style }}/login/images/gallery/user.png" alt="LOGO" style="width: 30%;height: 110px;"/>
 
                                     </div>
                                 </div>
@@ -68,17 +68,22 @@
                             </div>
 
                             <!-- begin alet section-->
-                            <div class="row mr-2 ml-2">
-                                <button type="text" class="btn btn-lg btn-block btn-outline-danger mb-2"
-                                        id="type-error">   هناك خطا في بيانات الدحول
+                              <div class="row mr-2 ml-2">
+                                @if(Session::has('error'))
+                                <button type="text" class="btn btn-lg btn-block btn-outline-danger mb-2" id="type-error">
+                                    {{ Session::get('error')}}
                                 </button>
+                                @endif
+
                             </div>
+
                             <!-- end alet section-->
 
                             <div class="card-content">
                                 <div class="card-body">
-                                    <form class="form-horizontal form-simple" action="{{ route(admin.login) }}" method="post"
+                                    <form class="form-horizontal form-simple" action="{{ route('admin.login.attach') }}" method="post"
                                           novalidate>
+                                          @csrf
                                         <fieldset class="form-group position-relative has-icon-left mb-0">
                                             <input type="text" name="email"
                                                    class="form-control form-control-lg input-lg"
